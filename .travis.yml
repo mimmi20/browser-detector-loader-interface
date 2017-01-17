@@ -1,0 +1,30 @@
+language: php
+sudo: false
+
+php:
+  - 7.0
+  - 7.1
+  - nightly
+
+os:
+  - linux
+
+env:
+  - PREFER_LOWEST="--prefer-lowest"
+  - PREFER_LOWEST=""
+
+matrix:
+  allow_failures:
+    - php: nightly
+    - env: PREFER_LOWEST="--prefer-lowest"
+
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction $PREFER_LOWEST
+
+script:
+  - php -n -d memory_limit=768M vendor/bin/phpcs
+  - php -n -d memory_limit=768M vendor/bin/php-cs-fixer fix --dry-run -vv
+
+notifications:
+  email: false

@@ -1,0 +1,29 @@
+{
+  "name": "mimmi20/browser-detector-loader-interface",
+  "description": "the source interface for the browscap helper",
+  "require": {
+    "php": "^7.0 || ^7.1"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^2.5",
+    "friendsofphp/php-cs-fixer": "^1.11"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Müller",
+      "homepage": "https://github.com/mimmi20",
+      "role": "Developer"
+    },
+    {
+      "name": "Contributors",
+      "homepage": "https://github.com/mimmi20/browser-detector-loader-interface/graphs/contributors"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BrowserDetector\\Loader\\": "src/"
+    }
+  }
+}
+
