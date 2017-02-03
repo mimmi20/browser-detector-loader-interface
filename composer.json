@@ -2,7 +2,7 @@
   "name": "mimmi20/browser-detector-loader-interface",
   "description": "the source interface for the browscap helper",
   "require": {
-    "php": "^7.0 || ^7.1"
+    "php": "^7.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5",
