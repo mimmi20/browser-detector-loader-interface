@@ -29,12 +29,12 @@ interface LoaderInterface
      *
      * @return mixed
      */
-    public function load($key);
+    public function load(string $key);
 
     /**
      * @param string $key
      *
      * @return bool
      */
-    public function has($key);
+    public function has(string $key): bool;
 }
