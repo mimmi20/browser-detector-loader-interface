@@ -1,33 +1,49 @@
 language: php
 sudo: false
+dist: trusty
 
 php:
-  - 7.0
   - 7.1
-  - nightly
 
-os:
-  - linux
+os: linux
 
 env:
-  - PREFER_LOWEST="--prefer-lowest"
-  - PREFER_LOWEST=""
+  - COMPOSER_FLAGS="--prefer-lowest"
+  - COMPOSER_FLAGS=""
 
-matrix:
-  allow_failures:
-    - php: nightly
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 before_install:
+  - phpenv config-rm xdebug.ini
   - echo 'opcache.enable=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - echo 'opcache.enable_cli=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - travis_retry composer self-update
 
-install:
-  - travis_retry composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction $PREFER_LOWEST
+install: travis_retry composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction $COMPOSER_FLAGS -vv
 
-script:
-  - php -n -d memory_limit=768M vendor/bin/phpcs
-  - php -n -d memory_limit=768M vendor/bin/php-cs-fixer fix --dry-run -vv
+script: composer validate
+
+jobs:
+  fast_finish: true
+  allow_failures:
+    - php: 7.2
+    - php: nightly
+  include:
+    - php: 7.2
+      env: COMPOSER_FLAGS="--ignore-platform-reqs"
+    - php: nightly
+      env: COMPOSER_FLAGS="--ignore-platform-reqs"
+    - stage: check coding style
+      php: 7.1
+      env: COMPOSER_FLAGS="--no-dev"
+      install: travis_retry composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction $COMPOSER_FLAGS -vv
+      script: wget https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.0.2/phpcs.phar && php -n phpcs.phar
+    - stage: check coding style
+      php: 7.1
+      env: COMPOSER_FLAGS="--no-dev"
+      script: wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.5.0/php-cs-fixer.phar && php -n php-cs-fixer.phar fix --dry-run -vv
 
 notifications:
   email: false
