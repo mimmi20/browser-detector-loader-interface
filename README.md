@@ -7,6 +7,7 @@
 ## Code Status
 
 [![Build Status](https://travis-ci.org/mimmi20/browser-detector-loader-interface.svg?branch=master)](https://travis-ci.org/mimmi20/browser-detector-loader-interface)
+[![Maintainability](https://api.codeclimate.com/v1/badges/62d53aaab94021c7825e/maintainability)](https://codeclimate.com/github/mimmi20/browser-detector-loader-interface/maintainability)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/mimmi20/browser-detector-loader-interface.svg)](http://isitmaintained.com/project/mimmi20/browser-detector-loader-interface "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/mimmi20/browser-detector-loader-interface.svg)](http://isitmaintained.com/project/mimmi20/browser-detector-loader-interface "Percentage of issues still open")
 [![Dependency Status](https://gemnasium.com/badges/github.com/mimmi20/browser-detector-loader-interface.svg)](https://gemnasium.com/github.com/mimmi20/browser-detector-loader-interface)
