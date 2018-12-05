@@ -1,19 +1,6 @@
 {
   "name": "mimmi20/browser-detector-loader-interface",
   "description": "the source interface for the browscap helper",
-  "require": {
-    "php": "^7.1"
-  },
-  "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.13",
-    "localheinz/composer-normalize": "^1.0.0",
-    "pepakriz/phpstan-exception-rules": "^0.3",
-    "phpstan/phpstan": "^0.10",
-    "phpstan/phpstan-deprecation-rules": "^0.10",
-    "phpstan/phpstan-strict-rules": "^0.10",
-    "squizlabs/php_codesniffer": "^3.3",
-    "localheinz/phpstan-rules": "^0.4"
-  },
   "license": "MIT",
   "authors": [
     {
@@ -26,10 +13,22 @@
       "homepage": "https://github.com/mimmi20/browser-detector-loader-interface/graphs/contributors"
     }
   ],
+  "require": {
+    "php": "^7.1"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.13",
+    "localheinz/composer-normalize": "^1.0.0",
+    "localheinz/phpstan-rules": "^0.4",
+    "pepakriz/phpstan-exception-rules": "^0.3",
+    "phpstan/phpstan": "^0.10",
+    "phpstan/phpstan-deprecation-rules": "^0.10",
+    "phpstan/phpstan-strict-rules": "^0.10",
+    "squizlabs/php_codesniffer": "^3.3"
+  },
   "autoload": {
     "psr-4": {
       "BrowserDetector\\Loader\\": "src/"
     }
   }
 }
-
