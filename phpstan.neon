@@ -1,6 +1,23 @@
 parameters:
+  level: max
+  paths:
+    - src
   autoload_files:
+    - %currentWorkingDirectory%/vendor/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/src/Util/Tokens.php
   excludes_analyse:
     - */tests/*/data/*
+  ignoreErrors:
+#    - '~Call to static method PHPUnit~'
+  exceptionRules:
+    reportUnusedCatchesOfUncheckedExceptions: false
+    uncheckedExceptions: []
+  classesAllowedToBeExtended:
+  	- UnexpectedValueException
+
+includes:
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
+  - vendor/pepakriz/phpstan-exception-rules/extension.neon
+  - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+  - vendor/localheinz/phpstan-rules/rules.neon

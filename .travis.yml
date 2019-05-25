@@ -6,6 +6,7 @@ php:
   - 7.1
   - 7.2
   - 7.3
+  - 7.4snapshot
 
 os: linux
 
@@ -35,7 +36,7 @@ script: skip
 
 jobs:
   allow_failures:
-    - php: 7.3
+    - php: 7.4snapshot
     - php: nightly
   include:
     - php: nightly
@@ -67,7 +68,7 @@ jobs:
       env:
         - TEST=phpstan
         - COMPOSER_FLAGS=""
-      script: vendor/bin/phpstan analyse -l max -c phpstan.neon --autoload-file=vendor/autoload.php --memory-limit=768M --no-progress src
+      script: vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=768M --no-progress
 
 notifications:
   email: false
