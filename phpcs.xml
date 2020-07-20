@@ -6,7 +6,7 @@
     <description>browser-detector-loader-interface</description>
 
     <arg name="report" value="full"/>
-    <arg value="wps" />
+    <arg value="wps"/>
     <arg name="encoding" value="utf-8"/>
 
     <!-- inherit rules from: -->
