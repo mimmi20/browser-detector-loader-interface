@@ -16,6 +16,3 @@ parameters:
   exceptionRules:
     reportUnusedCatchesOfUncheckedExceptions: false
     uncheckedExceptions: []
-  ergebnis:
-    classesAllowedToBeExtended:
-      - UnexpectedValueException
