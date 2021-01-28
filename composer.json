@@ -19,7 +19,7 @@
   },
   "require-dev": {
     "mimmi20/coding-standard": "~1.0.9",
-    "pepakriz/phpstan-exception-rules": "~0.11.5",
+    "pepakriz/phpstan-exception-rules": "~0.11.6",
     "phpstan/extension-installer": "~1.1.0",
     "phpstan/phpstan": "~0.12.70",
     "phpstan/phpstan-deprecation-rules": "~0.12.6"
