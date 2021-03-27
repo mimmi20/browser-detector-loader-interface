@@ -5,7 +5,7 @@ parameters:
     processTimeout: 200.0
   paths:
     - src
-  autoload_files:
+  scanFiles:
     - %currentWorkingDirectory%/vendor/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/src/Util/Tokens.php
