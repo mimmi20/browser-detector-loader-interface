@@ -9,23 +9,17 @@
  */
 
 declare(strict_types = 1);
+
 namespace BrowserDetector\Loader;
 
 interface LoaderInterface
 {
     /**
-     * @param string $key
-     *
-     * @throws \BrowserDetector\Loader\NotFoundException
-     *
      * @return mixed
+     *
+     * @throws NotFoundException
      */
     public function load(string $key);
 
-    /**
-     * @param string $key
-     *
-     * @return bool
-     */
     public function has(string $key): bool;
 }
