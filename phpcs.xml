@@ -13,4 +13,5 @@
     <rule ref="mimmi20-cs"/>
 
     <file>src</file>
+    <file>.php-cs-fixer.php</file>
 </ruleset>
